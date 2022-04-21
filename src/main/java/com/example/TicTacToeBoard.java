@@ -29,7 +29,7 @@ public class TicTacToeBoard {
    */
   public Evaluation evaluate() {
 	  if(val.length()!=9)
-		  return Evaluation.UnreachableState;
+		  return Evaluation.UNREACHABLESTATE;
 	  int xcount=0;
 	  int ocount=0;
 	  for(int i=0;i<val.length();i++)
@@ -40,37 +40,37 @@ public class TicTacToeBoard {
 			  ocount++;
 	  }
 	  if(Math.abs(xcount-ocount)>1)
-		  return Evaluation.UnreachableState;
+		  return Evaluation.UNREACHABLESTATE;
 	  for(int i=0;i<3;i++)
 	  {
 		  if(val.charAt(i)==val.charAt(i+3)&&(val.charAt(i+3)==(val.charAt(i+6)))) {
 				 if(val.charAt(i)=='x')
-					 return Evaluation.Xwins;
+					 return Evaluation.XWINS;
 				 else if(val.charAt(i)=='o')
-					 return Evaluation.Owins;
+					 return Evaluation.OWINS;
 			  }
 	  }
 	  for(int i=0;i<val.length();i+=3)
 	  {
 		  if(val.charAt(i)==val.charAt(i+1)&&(val.charAt(i+1)==(val.charAt(i+2)))) {
 				 if(val.charAt(i)=='x')
-					 return Evaluation.Xwins;
+					 return Evaluation.XWINS;
 				 else if(val.charAt(i)=='o')
-					 return Evaluation.Owins;
+					 return Evaluation.OWINS;
 			  }
 	  }
 	  if(val.charAt(0)==val.charAt(4)&&(val.charAt(4)==(val.charAt(8)))) {
 			 if(val.charAt(0)=='x')
-				 return Evaluation.Xwins;
+				 return Evaluation.XWINS;
 			 else if(val.charAt(0)=='o')
-				 return Evaluation.Owins;
+				 return Evaluation.OWINS;
 		  }
 	  if(val.charAt(2)==val.charAt(4)&&(val.charAt(4)==(val.charAt(6)))) {
 			 if(val.charAt(4)=='x')
-				 return Evaluation.Xwins;
+				 return Evaluation.XWINS;
 			 else if(val.charAt(4)=='o')
-				 return Evaluation.Owins;
+				 return Evaluation.OWINS;
 		  }
-	  return Evaluation.NoWinner;
+	  return Evaluation.NOWINNER;
   }
 }
