@@ -30,7 +30,8 @@ public class TicTacToeBoard {
   public Evaluation evaluate() {
 	  if(val.length()!=9)
 		  return Evaluation.UnreachableState;
-	  int xcount=0,ocount=0;
+	  int xcount=0;
+	  int ocount=0;
 	  for(int i=0;i<val.length();i++)
 	  {
 		  if(val.charAt(i)=='x')
